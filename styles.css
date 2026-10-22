@@ -106,21 +106,9 @@ button {
   background:var(--text);
   color:var(--void)
 }
-@media (hover: hover) and (pointer: fine) {
-    .btn-primary:hover {
-      background:#fff;
-      transform:translateY(-2px)
-    }
-}
 .btn-ghost {
   border:1px solid var(--line-strong);
   color:var(--text)
-}
-@media (hover: hover) and (pointer: fine) {
-    .btn-ghost:hover {
-      border-color:#fff6;
-      transform:translateY(-2px)
-    }
 }
 @media (width<=720px) {
   .section {
@@ -836,13 +824,24 @@ button {
   font-size:14px
 }
 .work-modal-close {
-  border:1px solid var(--line-strong);
-  width:44px;
-  height:44px;
-  color:var(--muted);
-  border-radius:999px;
-  transition:color .3s,border-color .3s
+  border: 1px solid var(--line-strong);
+  width: 44px;
+  height: 44px;
+  color: var(--muted);
+  border-radius: 999px;
+  transition: color .3s, border-color .3s;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.work-modal-close svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+
 .work-modal-close:hover {
   color:var(--text);
   border-color:#ffffff73
