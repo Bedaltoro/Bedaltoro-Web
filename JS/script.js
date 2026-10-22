@@ -201,7 +201,7 @@
       about_p2: 'We work with startups and small teams, usually as the peaople who turns a rough idea into something people can download and use.',
       about_cv: 'Download CV',
       contact_eyebrow: 'Contact', contact_title: "Let's build something great.",
-      contact_intro: "Tell us a little about your project and I'll reply within two working days.",
+      contact_intro: "Tell us a little about your project and We'll reply within two working days.",
       f_name: 'Name', f_email: 'Email', f_msg: 'Tell me about your project', f_legend: "I'm interested in",
       c1: 'Mobile app', c2: 'Website', c3: 'Design', c4: 'Something else',
       send: 'Send message', sending: 'Opening your email app…',
