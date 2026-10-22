@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bedaltoro | Mobile & Web Development</title>
+  <meta name="description" content="Portfolio of Bedaltoro, a mobile and web developer building polished apps and fast websites.">
+  <meta name="theme-color" content="#060607">
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Clash Display + General Sans (Fontshare), JetBrains Mono (Google Fonts) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=general-sans@400,500,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+  <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-lottie">
+        <svg viewBox="-110 -110 220 220" fill="none" stroke="#fff" stroke-width="1.5">
+          <rect class="ld ld1" x="-40" y="-40" width="80" height="80" rx="22"/>
+          <rect class="ld ld2" x="-58" y="-58" width="116" height="116" rx="32" opacity=".55"/>
+          <rect class="ld ld3" x="-76" y="-76" width="152" height="152" rx="42" opacity=".3"/>
+          <!-- logo, centered (32x32 mark scaled 1.5x => 48x48, offset by half) -->
+          <g class="logo-anim" transform="translate(-24 -24) scale(1.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path class="p1" pathLength="1" d="M9.5 3L3.5 6L9.5 9"/>
+            <path class="p2" pathLength="1" d="M17.6 3L14.4 9"/>
+            <path class="p3" pathLength="1" d="M22.5 3L28.5 6L22.5 9"/>
+            <path class="p4" pathLength="1" d="M10.5 13.5V29"/>
+            <path class="p5" pathLength="1" d="M10.5 13.5H16A3.25 3.25 0 0 1 16 20H10.5"/>
+            <path class="p6" pathLength="1" d="M10.5 20H17A4.5 4.5 0 0 1 17 29H10.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="loader-word">BEDALTORO</div>
+      <div class="loader-word">STUDIO</div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="container nav-row">
+      <a href="#top" class="nav-brand" aria-label="Bedaltoro — home">
+        <img class="nav-mark" src="./images/logo.svg" alt="" width="22" height="22">
+        <span class="nav-word">BEDALTORO</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="#work" data-i18n="nav_work">Work</a>
+        <a class="nav-link" href="#services" data-i18n="nav_services">Services</a>
+        <a class="nav-link" href="#about" data-i18n="nav_about">About</a>
+        <a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-side">
+        <div class="nav-lang" role="group" aria-label="Language">
+          <button type="button" class="on" data-lang="en" aria-pressed="true">EN</button>
+          <span class="nav-lang-sep"></span>
+          <button type="button" data-lang="sk" aria-pressed="false">SK</button>
+        </div>
+        <a href="#contact" class="btn btn-primary nav-cta" data-i18n="nav_cta">Let's talk</a>
+        <button type="button" class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="sheet">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-sheet" id="sheet">
+    <div class="nav-sheet-links">
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="#contact" class="btn btn-primary nav-sheet-cta" data-i18n="nav_cta">Let's talk</a>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <p class="eyebrow" data-i18n="hero_eyebrow">Mobile developer</p>
+        <h1 class="hero-title" data-i18n="hero_title">Apps<br><span class="hero-title-dim"> people love to use.</span></h1>
+        <p class="hero-sub" data-i18n="hero_sub">I design and build polished mobile apps and fast, thoughtful websites — from first sketch to store launch.</p>
+        <div class="hero-ctas">
+          <a href="#work" class="btn btn-primary" data-i18n="hero_cta1">View my work</a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta2">Get in touch</a>
+        </div>
+        <dl class="hero-stats">
+          <div class="hero-stat"><dt>3+</dt><dd data-i18n="stat1">Apps shipped</dd></div>
+          <div class="hero-stat"><dt>4+</dt><dd data-i18n="stat2">Years of experience</dd></div>
+          <div class="hero-stat"><dt>5+</dt><dd data-i18n="stat3">Happy clients</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-shelf" aria-hidden="true">
+        <div class="hero-shelf-tilt">
+          <div class="hero-shelf-track" id="shelf">
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-2.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-3.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/SlovanHockey/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/SlovanHockey/ss-2.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/O2_App/ss-1.webp"" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-4.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-5.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/SlovanHockey/ss-3.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/O2_App/ss-2.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/O2_App/ss-3.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/SlovanHockey/ss-4.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-6.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/SlovanHockey/ss-5.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/O2_App/ss-4.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/O2_App/ss-5.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/SlovanHockey/ss-6.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/O2_App/ss-6.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+            <div class="hero-shelf-item">
+              <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="1370" data-h="835" alt="" width="1370" height="835" draggable="false">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="work_eyebrow">Work</p>
+          <h2 class="title-lg" data-i18n="work_title">Mobile apps</h2>
+          <p class="section-intro" data-i18n="work_intro">A few of the apps I've designed and built recently. Open any card for screenshots and details.</p>
+        </div>
+
+        <div class="work-rail reveal">
+          <div class="work-viewport" id="viewport">
+            <div class="work-track" id="track">
+              <article class="work-card" style="--accent: #2244d8">
+                <button type="button" class="work-card-btn" data-app="0" aria-haspopup="dialog">
+                  <div class="work-card-head">
+                    <img class="work-card-icon" src="./images/O2_App/O2logo.jpg" alt="" width="52" height="52">
+                    <div>
+                      <h3>O2 arena</h3>
+                      <div class="work-card-tag">Venue</div>
+                    </div>
+                  </div>
+                  <p class="work-card-desc">Visitor guide for the biggest arena in Czechia.</p>
+                  <p class="work-card-role">Our role · Design and Frontend development</p>
+                  <img class="work-card-phone phone-photo" src="./images/O2_App/ss-1.png" data-w="440" data-h="916" alt="App screenshot" width="440" height="916" loading="lazy" draggable="false" data-fb="1">
+                </button>
+                <!-- Modal content for this app: edit text and add/remove <img> lines here -->
+                <template class="work-card-detail" data-role="Design and Frontend development" data-store="">
+                  <img src="./images/O2_App/ss-1.webp" data-w="600" data-h="1300" alt="O2 arena screen 1" width="600" height="1300" draggable="false">
+                  <img src="./images/O2_App/ss-2.webp" data-w="600" data-h="1300" alt="O2 arena screen 3" width="600" height="1300" draggable="false">
+                  <img src="./images/O2_App/ss-3.webp" data-w="600" data-h="1300" alt="O2 arena screen 4" width="600" height="1300" draggable="false">
+                  <img src="./images/O2_App/ss-4.webp" data-w="600" data-h="1300" alt="O2 arena screen 2" width="600" height="1300" draggable="false">
+                  <img src="./images/O2_App/ss-5.webp" data-w="600" data-h="1300" alt="O2 arena screen 5" width="600" height="1300" draggable="false">
+                  <img src="./images/O2_App/ss-6.webp" data-w="600" data-h="1300" alt="O2 arena screen 6" width="600" height="1300" draggable="false">
+                </template>
+              </article>
+              <article class="work-card" style="--accent: #63b3e4">
+                <button type="button" class="work-card-btn" data-app="1" aria-haspopup="dialog">
+                  <div class="work-card-head">
+                    <img class="work-card-icon" src="./images/Sk-SlovanBA/logoBA.jpg" alt="" width="52" height="52">
+                    <div>
+                      <h3>ŠK Slovan Bratislava</h3>
+                      <div class="work-card-tag">ŠK Slovan Bratislava · Football</div>
+                    </div>
+                  </div>
+                  <p class="work-card-desc">Official app of the Slovak football champions.</p>
+                  <p class="work-card-role">Our role · Design and Frontend development</p>
+                  <img class="work-card-phone phone-photo" src="./images/Sk-SlovanBA/ss-1.png" data-w="440" data-h="916" alt="App screenshot" width="440" height="916" loading="lazy" draggable="false" data-fb="1">
+                </button>
+                <!-- Modal content for this app: edit text and add/remove <img> lines here -->
+                <template class="work-card-detail" data-role="Design and Frontend development" data-store="">
+                  <img src="./images/Sk-SlovanBA/ss-1.webp" data-w="600" data-h="1300" alt="ŠK Slovan Bratislava screen 1" width="600" height="1300" draggable="false">
+                  <img src="./images/Sk-SlovanBA/ss-2.webp" data-w="600" data-h="1300" alt="ŠK Slovan Bratislava screen 2" width="600" height="1300" draggable="false">
+                  <img src="./images/Sk-SlovanBA/ss-3.webp" data-w="600" data-h="1300" alt="ŠK Slovan Bratislava screen 3" width="600" height="1300" draggable="false">
+                  <img src="./images/Sk-SlovanBA/ss-4.webp" data-w="600" data-h="1300" alt="ŠK Slovan Bratislava screen 4" width="600" height="1300" draggable="false">
+                  <img src="./images/Sk-SlovanBA/ss-5.webp" data-w="600" data-h="1300" alt="ŠK Slovan Bratislava screen 5" width="600" height="1300" draggable="false">
+                  <img src="./images/Sk-SlovanBA/ss-6.webp" data-w="600" data-h="1300" alt="ŠK Slovan Bratislava screen 6" width="600" height="1300" draggable="false">
+                </template>
+              </article>
+              <article class="work-card" style="--accent: #2f6fb8">
+                <button type="button" class="work-card-btn" data-app="2" aria-haspopup="dialog">
+                  <div class="work-card-head">
+                    <img class="work-card-icon" src="./images/SlovanHockey/slovanHockeyLogo.jpg" alt="" width="52" height="52">
+                    <div>
+                      <h3>Slovan+</h3>
+                      <div class="work-card-tag">HC Slovan Bratislava · Hockey</div>
+                    </div>
+                  </div>
+                  <p class="work-card-desc">Matchday hub for the Bratislava hockey club.</p>
+                  <p class="work-card-role">Our role · Design and Frontend development</p>
+                  <img class="work-card-phone phone-photo" src="./images/SlovanHockey/ss-1.png" data-w="440" data-h="916" alt="App screenshot" width="440" height="916" loading="lazy" draggable="false" data-fb="1">
+                </button>
+                <!-- Modal content for this app: edit text and add/remove <img> lines here -->
+                <template class="work-card-detail" data-role="Design and Frontend development" data-store="">
+                  <img src="./SlovanHockey/ss-1.webp" data-w="600" data-h="1300" alt="Slovan+ screen 1" width="600" height="1300" draggable="false">
+                  <img src="./SlovanHockey/ss-2.webp" data-w="600" data-h="1300" alt="Slovan+ screen 2" width="600" height="1300" draggable="false">
+                  <img src="./SlovanHockey/ss-3.webp" data-w="600" data-h="1300" alt="Slovan+ screen 3" width="600" height="1300" draggable="false">
+                  <img src="./SlovanHockey/ss-4.webp" data-w="600" data-h="1300" alt="Slovan+ screen 4" width="600" height="1300" draggable="false">
+                  <img src="./SlovanHockey/ss-5.webp" data-w="600" data-h="1300" alt="Slovan+ screen 5" width="600" height="1300" draggable="false">
+                  <img src="./SlovanHockey/ss-6.webp" data-w="600" data-h="1300" alt="Slovan+ screen 6" width="600" height="1300" draggable="false">
+                </template>
+              </article>
+              <article class="work-card" style="--accent: #8a6bff">
+                <button type="button" class="work-card-btn" data-app="3" aria-haspopup="dialog">
+                  <div class="work-card-head">
+                    <img class="work-card-icon" src="./images/Expesnse tracker/icon.png" data-w="52" data-h="52" alt="" width="52" height="52">
+                    <div>
+                      <h3>Expensify</h3>
+                      <div class="work-card-tag">Category</div>
+                    </div>
+                  </div>
+                  <p class="work-card-desc">Short description of the fourth app.</p>
+                  <p class="work-card-role">Our role · Design and Frontend development</p>
+                  <img class="work-card-phone phone-photo" src="./images/App4/ss-1.png" data-w="440" data-h="916" alt="App screenshot" width="440" height="916" loading="lazy" draggable="false">
+                </button>
+                <!-- Modal content for this app: edit text and add/remove <img> lines here -->
+                <template class="work-card-detail" data-role="Design and Frontend development" data-store="">
+                  <img src="./images/SlovanHockey/ss-1.webp" data-w="600" data-h="1300" alt="App name screen 1" width="600" height="1300" draggable="false">
+                  <img src="./images/SlovanHockey/ss-2.webp" data-w="600" data-h="1300" alt="App name screen 2" width="600" height="1300" draggable="false">
+                  <img src="./images/SlovanHockey/ss-3.webp" data-w="600" data-h="1300" alt="App name screen 3" width="600" height="1300" draggable="false">
+                  <img src="./images/SlovanHockey/ss-4.webp" data-w="600" data-h="1300" alt="App name screen 4" width="600" height="1300" draggable="false">
+                  <img src="./images/SlovanHockey/ss-5.webp" data-w="600" data-h="1300" alt="App name screen 5" width="600" height="1300" draggable="false">
+                  <img src="./images/SlovanHockey/ss-6.webp" data-w="600" data-h="1300" alt="App name screen 6" width="600" height="1300" draggable="false">
+                </template>
+              </article>
+            </div>
+          </div>
+          <div class="work-nav-row">
+            <span class="work-hint" id="hint" data-i18n="hint_drag">Drag to explore</span>
+            <div class="work-arrows">
+              <button type="button" id="prev" aria-label="Previous app">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+              </button>
+              <button type="button" id="next" aria-label="Next app">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="svc_eyebrow">Services</p>
+          <h2 class="title-lg" data-i18n="svc_title">What I can do for you</h2>
+          <p class="section-intro" data-i18n="svc_intro">One person from idea to launch — fewer handoffs, faster decisions, and a product that feels consistent.</p>
+        </div>
+
+        <div class="svc-list reveal">
+          <article class="svc-row">
+            <h3>Mobile apps</h3>
+            <div>
+              <p class="svc-desc">Native and cross-platform apps for iOS and Android, built for smooth animation, offline use and easy updates.</p>
+              <p class="svc-proof">Pulse reached 120,000 downloads in its first three months with a 4.8 store rating.</p>
+            </div>
+            <ul>
+              <li>iOS (SwiftUI)</li>
+              <li>Android (Kotlin)</li>
+              <li>React Native / Flutter</li>
+              <li>App Store release</li>
+            </ul>
+          </article>
+          <article class="svc-row">
+            <h3>Product design</h3>
+            <div>
+              <p class="svc-desc">Interface design, prototypes and design systems that give your product a clear look and are easy to build on.</p>
+              <p class="svc-proof">Nook's redesigned onboarding raised sign-up completion from 41% to 68%.</p>
+            </div>
+            <ul>
+              <li>UI &amp; UX design</li>
+              <li>Clickable prototypes</li>
+              <li>Design systems</li>
+              <li>Usability testing</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal">
+            <p class="eyebrow" data-i18n="about_eyebrow">About</p>
+            <h2 class="title-lg" data-i18n="about_title">Hi, I'm Alex.</h2>
+            <p class="about-p" data-i18n="about_p1">I'm a developer who cares about how things feel in your hand. I started out building small utilities for friends and ended up shipping apps used by tens of thousands of people.</p>
+            <p class="about-p" data-i18n="about_p2">I work with startups and small teams, usually as the person who turns a rough idea into something people can download and use.</p>
+          </div>
+
+          <div class="about-portrait reveal">
+            <img src="./images/appsMockup.webp" data-w="800" data-h="1000" alt="Portrait of Bedaltoro" loading="lazy">
+          </div>
+
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact-inner">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="contact_eyebrow">Contact</p>
+          <h2 class="title-lg" data-i18n="contact_title">Let's build something great.</h2>
+          <p class="section-intro contact-sub" data-i18n="contact_intro">Tell me a little about your project and I'll reply within two working days.</p>
+        </div>
+
+        <form class="contact-form reveal" id="form" novalidate>
+          <input class="contact-honeypot" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="contact-grid">
+            <label class="field">
+              <input type="text" name="name" placeholder=" " autocomplete="name" required>
+              <span data-i18n="f_name">Name</span>
+            </label>
+            <label class="field">
+              <input type="email" name="email" placeholder=" " autocomplete="email" required>
+              <span data-i18n="f_email">Email</span>
+            </label>
+          </div>
+          <label class="field field-area">
+            <textarea name="message" rows="5" placeholder=" " required></textarea>
+            <span data-i18n="f_msg">Tell me about your project</span>
+          </label>
+
+          <fieldset class="contact-types">
+            <legend class="contact-legend" data-i18n="f_legend">I'm interested in</legend>
+            <div class="contact-chips" id="chips">
+              <button type="button" class="chip chip-on" data-value="Mobile app" aria-pressed="true"><span class="chip-bg"></span><span class="chip-label" data-i18n="c1">Mobile app</span></button>
+              <button type="button" class="chip" data-value="Website" aria-pressed="false"><span class="chip-label" data-i18n="c2">Website</span></button>
+              <button type="button" class="chip" data-value="Design" aria-pressed="false"><span class="chip-label" data-i18n="c3">Design</span></button>
+              <button type="button" class="chip" data-value="Something else" aria-pressed="false"><span class="chip-label" data-i18n="c4">Something else</span></button>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary contact-send" id="send" data-i18n="send" popovertarget="false">Send message</button>
+          <p class="contact-error" id="error" role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.svg" alt="Bedaltoro" width="26" height="26">
+          <p class="footer-tagline" data-i18n="footer_tagline">Mobile apps and websites, crafted with care.</p>
+          <p class="footer-loc" data-i18n="footer_loc">Working worldwide</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#work" data-i18n="nav_work">Work</a>
+          <a href="#services" data-i18n="nav_services">Services</a>
+          <a href="#about" data-i18n="nav_about">About</a>
+          <a href="#contact" data-i18n="nav_contact">Contact</a>
+        </nav>
+        <div class="footer-links">
+          <a href="mailto:hello@example.com">hello@example.com</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Bedaltoro. All rights reserved.</span>
+        <span class="footer-domain">bedaltoro.example</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project modal -->
+  <div class="work-modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="work-modal-panel">
+      <div class="work-modal-head">
+        <img id="modal-icon" alt="" width="62" height="62">
+        <div class="work-modal-title">
+          <h3 id="modal-title"></h3>
+          <p id="modal-tag"></p>
+        </div>
+        <a class="btn btn-ghost work-modal-store" id="modal-store" href="#" target="_blank" rel="noopener" data-i18n="modal_store">View in store ↗</a>
+        <button type="button" class="work-modal-close" id="modal-close" aria-label="Close">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </button>
+      </div>
+      <p class="work-modal-desc" id="modal-desc"></p>
+      <div class="work-modal-role">
+        <div class="work-modal-role-label" data-i18n="modal_role">My role</div>
+        <p class="work-modal-role-text" id="modal-role"></p>
+      </div>
+      <div class="work-modal-gallery">
+        <div class="work-modal-strip" id="strip"></div>
+        <button type="button" class="work-modal-arrow left" id="strip-prev" aria-label="Previous screenshot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button type="button" class="work-modal-arrow right" id="strip-next" aria-label="Next screenshot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const lenis = new Lenis({
+    duration: 1,
+    smoothWheel: true
+  });
+
+  // Lenis animation loop
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+
+  // Navbar links
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const target = document.querySelector(
+        link.getAttribute('href')
+      );
+
+      lenis.scrollTo(target, {
+        duration: 1.2,
+        offset: -20
+      });
+    });
+  });
+  </script>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
