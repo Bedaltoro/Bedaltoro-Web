@@ -312,9 +312,9 @@ button {
 .nav-sheet {
   inset:var(--nav-h) 0 0 0;
   z-index:149;
-  -webkit-backdrop-filter:blur(24px);
-  backdrop-filter:blur(24px);
-  background:#060607eb;
+  backdrop-filter: blur(18px);
+  border-bottom-color: var(--line);
+  background: #060607b8;
   display:none;
   position:fixed;
   transition: .5s;
