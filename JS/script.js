@@ -18,7 +18,6 @@
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   };
 
-  // error events don't bubble, so listen in the capture phase
   document.addEventListener('error', e => {
     const el = e.target;
     if (!(el instanceof HTMLImageElement) || el.dataset.fb) return;
@@ -143,7 +142,8 @@
 
   track.addEventListener('click', e => {
     const btn = e.target.closest('.work-card-btn');
-    if (btn) openModal(+btn.dataset.app);
+    if (!btn) return;
+    openModal($$('.work-card', track).indexOf(btn.closest('.work-card')));
   });
   $('#modal-close').addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
@@ -195,13 +195,13 @@
       hint_drag: 'Drag to explore', hint_swipe: 'Swipe to explore',
       modal_role: 'Our role', modal_store: 'View in store ↗',
       svc_eyebrow: 'Services', svc_title: 'What We can do for you',
-      svc_intro: 'One person from idea to launch — fewer handoffs, faster decisions, and a product that feels consistent.',
+      svc_intro: 'Three people from idea to launch — fewer handoffs, faster decisions, and a product that feels consistent.',
       about_eyebrow: 'About', about_title: "Hi, We are Bedaltoro,",
       about_p1: "developers, who cares about how things feel in your hand. We started out building small utilities for friends and ended up shipping apps used by tens of thousands of people.",
       about_p2: 'We work with startups and small teams, usually as the peaople who turns a rough idea into something people can download and use.',
       about_cv: 'Download CV',
       contact_eyebrow: 'Contact', contact_title: "Let's build something great.",
-      contact_intro: "Tell me a little about your project and I'll reply within two working days.",
+      contact_intro: "Tell us a little about your project and I'll reply within two working days.",
       f_name: 'Name', f_email: 'Email', f_msg: 'Tell me about your project', f_legend: "I'm interested in",
       c1: 'Mobile app', c2: 'Website', c3: 'Design', c4: 'Something else',
       send: 'Send message', sending: 'Opening your email app…',
@@ -282,7 +282,7 @@
     e.preventDefault();
     errorEl.textContent = '';
     const data = new FormData(form);
-    if (data.get('company')) return; // honeypot: bots fill this in
+    if (data.get('company')) return; 
 
     const name = String(data.get('name') || '').trim();
     const email = String(data.get('email') || '').trim();
@@ -293,7 +293,7 @@
     const body = `${message}\n\n— ${name} (${email})`;
     sendBtn.disabled = true;
     sendBtn.textContent = t('sending');
-    location.href = `mailto:hello@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    location.href = `mailto:bedaltoro@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setTimeout(() => { sendBtn.disabled = false; sendBtn.textContent = t('send'); }, 3000);
   });
 })();
